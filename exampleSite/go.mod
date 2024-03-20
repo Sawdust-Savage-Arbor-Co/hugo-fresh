@@ -1,7 +1,5 @@
-module github.com/StefMa/hugo-fresh/exampleSite
+module github.com/Sawdust-Savage-Arbor-Co/hugo-fresh/exampleSite
 
-go 1.12
+go 1.21.4
 
-replace github.com/StefMa/hugo-fresh => ../
-
-require github.com/StefMa/hugo-fresh v1.0.0 // indirect
+require github.com/Sawdust-Savage-Arbor-Co/hugo-fresh v0.0.0-20240320200221-16a8f8bb68e0 // indirect
