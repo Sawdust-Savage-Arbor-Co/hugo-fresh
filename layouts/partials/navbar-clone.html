@@ -1,14 +1,13 @@
-{{- $navbar           := .Site.Params.navbar }}
+{{- $navbar           := .Site.Params.navbar.menu }}
 {{- $sidebarVisible   := .Params.sidebar | default .Site.Params.sidebar }}
-{{- $navbarLogo       := .Site.Params.navbarlogo }}
-{{- $navbarLogoWidth  := .Site.Params.navbarlogo.width | default 112 }}
-{{- $navbarLogoHeight := .Site.Params.navbarlogo.width | default 28 }}
+{{- $navbarLogoWidth  := .Site.Params.navbar.width | default 112 }}
+{{- $navbarLogoHeight := .Site.Params.navbar.width | default 28 }}
 <nav id="navbar-clone" class="navbar is-fresh is-transparent" role="navigation" aria-label="main navigation">
   <div class="container">
     <div class="navbar-brand">
-      {{- if $navbarLogo}}
-      <a class="navbar-item" href="{{ $navbarLogo.link }}">
-        <img src="{{ printf "/images/%s" $navbarLogo.image | relURL }}" alt="" width="{{ $navbarLogoWidth }}" height="{{ $navbarLogoHeight }}">
+      {{- if (.Site.Params.navbar) }}
+      <a class="navbar-item" href="{{ .Site.Params.navbar.link }}">
+        <img src="{{ .Site.Params.navbar.image | relURL }}" alt="" width="{{ $navbarLogoWidth }}" height="{{ $navbarLogoHeight }}">
       </a>
       {{- end}}
 

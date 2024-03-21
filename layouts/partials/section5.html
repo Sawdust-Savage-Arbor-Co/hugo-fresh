@@ -18,7 +18,10 @@
     <div class="content-wrapper">
       <div class="columns">
         <div class="column is-6 is-offset-3">
-          <form{{ with $action }} action="{{ . }}"{{end}}{{ with $method }} method="{{ . }}"{{end}}>
+
+          <form name="contact" method="POST" action="{{ .Site.Params.contactFormAction | relURL }}" >            
+            <input name="_redirect" type="hidden" id="name" value="{{"/thanks/" | absURL}}">
+            <input name="_formsubmit_id" type="text" hidden>
             <div class="columns is-multiline">
               <div class="column is-6">
                 <input class="input is-medium" name="name" type="text" placeholder="Enter your name">
@@ -34,6 +37,7 @@
               </div>
             </div>
           </form>
+
         </div>
       </div>
     </div>

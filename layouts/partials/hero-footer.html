@@ -1,13 +1,11 @@
-{{- $hero        := .Site.Params.hero }}
-{{- $clientLogos := index $hero "clientlogos" }}
 <div class="hero-foot mb-20">
   <div class="container">
     <div class="tabs is-centered">
       <ul>
-        {{- range $clientLogos }}
+        {{- range .Site.Params.hero.footer.clientlogos }}
         <li>
           <a {{ if .url }} href="{{ .url }}" {{ end }}>
-            <img class="partner-logo" src="{{ printf "/images/logos/clients/%s.svg" .logo | relURL }}">
+            <img class="partner-logo" src="{{ printf "/logos/clients/%s.svg" .logo | relURL }}">
           </a>
         </li>
         {{- end }}

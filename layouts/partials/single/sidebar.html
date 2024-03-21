@@ -1,20 +1,32 @@
-{{- $logo     := .Params.sidebarlogo }}
+{{- $sidebar  := .Site.Params.sidebar }}
+{{- $logo     := index $sidebar "logo" }}
+{{- $sections := index $sidebar "sections" }}
 <div class="sidebar">
   <div class="sidebar-header">
-    <img src="{{ printf "/images/logos/%s.svg" $logo | relURL }}">
+    <img src="{{ printf "/logos/%s.svg" $logo | relURL }}">
     <a class="sidebar-close" href="javascript:void(0);">
       <i data-feather="x"></i>
     </a>
   </div>
   <div class="inner">
     <ul class="sidebar-menu">
-      {{ range where .Site.RegularPages "Section" (strings.TrimSuffix "/" .File.Dir) }}
-      <li>
-        <a href="{{ .Permalink }}">
-          {{ .Title }}
+      {{- range $sections }}
+      <li class="have-children">
+        <a href="#">
+          <span class="fa fa-{{ .icon }}"></span>
+          {{ .title }}
         </a>
+        <ul>
+          {{- range .links }}
+          <li>
+            <a href="{{ .url }}">
+              {{ .text }}
+            </a>
+          </li>
+          {{- end }}
+        </ul>
       </li>
-      {{ end }}
+      {{- end }}
     </ul>
   </div>
 </div>
