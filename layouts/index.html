@@ -6,7 +6,7 @@
     {{ end }}
 
     {{- if not (.Site.Params.hero.disable) }}
-    <section class="hero is-fullheight is-default is-bold">
+    <section class="hero is-halfheight is-default is-bold">
         {{- if not (.Site.Params.hero.body.disable) }}
         {{ partial "hero-body.html" . }}
         {{ end }}
