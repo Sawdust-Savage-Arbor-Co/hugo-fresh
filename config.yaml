@@ -26,3 +26,7 @@
 #       target: assets/bulma/sass/layout
 #     - source: sass/utilities
 #       target: assets/bulma/sass/utilities
+module:
+  mounts:
+    - source: node_modules/bulma
+      target: assets/bulma
