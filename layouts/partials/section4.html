@@ -13,12 +13,11 @@
       <h3 class="subtitle is-5 light-text">{{ . }}</h3>
       {{- end }}
       <p class="has-text-centered mt-20">
-        <a class="button cta is-large rounded secondary-btn raised" href="{{ $buttonLink }}">
+        <a class="button cta is-large rounded primary-btn raised" href="{{ $buttonLink }}">
           {{ $buttonText }}
         </a>
       </p>
     </div>
-
 
     <div class="content-wrapper">
       <div class="columns is-vcentered">
@@ -28,11 +27,11 @@
             <blockquote>
               {{ .quote }}
             </blockquote>
-            <div class="author">
+            <!-- <div class="author">
               <img src="{{ printf "/illustrations/faces/%s.png" (string .img) | relURL }}" alt=""/>
               <h5>{{ .name }}</h5>
               <span>{{ .job }}</span>
-            </div>
+            </div> -->
           </figure>
         </div>
         {{- end }}
