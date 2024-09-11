@@ -167,6 +167,8 @@ params:
     disable: false
     title: Our Clients love us!
     subtitle: Lorem ipsum sit dolor amet is a dummy text used by typography industry
+    buttonLink: https://google.com
+    buttonText: Write a review
     clients:
     - name: Irma Walters
       quote: Lorem ipsum dolor sit amet, elit deleniti dissentias quo eu, hinc minim appetere te usu, ea case duis scribentur has. Duo te consequat elaboraret, has quando suavitate at.
