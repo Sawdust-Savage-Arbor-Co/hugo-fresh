@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="/css/gallery.css">
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+<div class="gallery">
+  {{ $images := resources.GetMatch "images/gallery/*" }}
+  {{ range $images }}
+    <div class="gallery-item">
+      <img src="{{ .RelPermalink }}" alt="{{ .Name }}">
+    </div>
+  {{ end }}
+</div>
+{{ end }}
